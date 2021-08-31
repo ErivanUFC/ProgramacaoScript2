@@ -12,11 +12,11 @@ ou
 
 No Linux:
 
-descompactar ListaLinux.zip e executar "ListaLinux"
+descompactar ListaLinux.zip dentro de dist e executar "ListaLinux"
 
 No Windows:
 
-descompactar ListaWindows.zip e executar "ListaWindows.exe"
+descompactar ListaWindows.zip dentro de dist e executar "ListaWindows.exe"
 
 ### Para criar executáveis
 
