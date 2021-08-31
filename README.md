@@ -8,16 +8,6 @@
 
 npm install && npm run start
 
-ou 
-
-no linux:
-
-./release-builds/ListaLinux-linux-x64/ListaLinux
-
-no windows:
-
-
-
 ### Para criar executáveis
 
 npm install electron-packager -g
