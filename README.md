@@ -40,12 +40,12 @@ Resposta: Ele é protótipo evolucionário, pois como está escrito permite que 
  
 #### Pergunta: Quais as características da linguagem escolhida fazem ela apropriada para o desenvolvimento de um protótipo? 
 
-Resposta: Foi escolhido a linguagem javascript, que tem tipagem fraca, o que permite que se escreva o codigo de forma mais rapida sem a preocupação com os tipos dos objetos, além que os objetos podem mudar de tipo de forma muito simples, além de permiter que se interaja com o HTML, permitindo uma rapida prototipagem da interface. 
+Resposta: Foi escolhida a linguagem javascript, que tem tipagem fraca, o que permite que se escreva o código de forma mais rápida sem a preocupação com os tipos dos objetos, além de que os objetos podem mudar de tipo de forma muito simples, além de permiter que se interaja com o HTML, permitindo uma rápida prototipagem da interface. 
 
 #### Pergunta: Que dificuldades você teve no desenvolvimento do protótipo?
 
-Resposta: Uma das dificultades encontradas foi que não foi possivel criar o executavel para windows atraves de uma distro Linux, sendo necessario ou um exportar pelo proprio Windows ou atraves do Wine.
+Resposta: Uma das dificultades encontradas foi que não foi possivel criar o executável para Windows através de uma distro Linux, sendo necessário exportar pelo próprio Windows ou atraves do Wine.
 
 #### Pergunta: Quais as vantagens de ter um protótipo desenvolvido antes da implementação do programa efetivo?
 
-Resposta: Possibilita ver a viabilidade dos requisitos a serem implementados, escolhendo a melhor maneira dessa implementação, e vendo se a linguagem é adequada para comprir com esses requisitos, uma vez não sendo adequada se torna mais facil pivotar o projeto de outras formas. Poupando assim tempo, recursos e agilizando o desenvolvimento, e evitando eventuais riscos que poderiam surgir no programa final que não seriam vistos se não com o uso de prototipos. 
+Resposta: Possibilita ver a viabilidade dos requisitos a serem implementados, escolhendo a melhor maneira dessa implementação, e vendo se a linguagem é adequada para cumprir com esses requisitos, uma vez não sendo adequada se torna mais fácil pivotar o projeto de outras formas. Poupando assim tempo, recursos e agilizando o desenvolvimento, e evitando eventuais riscos que poderiam surgir no programa final que não seriam vistos se não com o uso de protótipos. 
