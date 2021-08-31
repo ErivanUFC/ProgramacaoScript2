@@ -18,7 +18,7 @@ no windows:
 
 
 
-### Para criar executaveis
+### Para criar executáveis
 
 npm install electron-packager -g
 
