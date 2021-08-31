@@ -8,6 +8,16 @@
 
 npm install && npm run start
 
+ou 
+
+No Linux:
+
+descompactar ListaLinux.zip e executar "ListaLinux"
+
+No Windows:
+
+descompactar ListaWindows.zip e executar "ListaWindows.exe"
+
 ### Para criar executáveis
 
 npm install electron-packager -g
