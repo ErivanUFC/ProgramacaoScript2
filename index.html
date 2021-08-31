@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <title>Lista de Compras</title>
+  <style>
+    input[type='submit'],
+    button,
+    [aria-label] {
+      cursor: pointer;
+    }
+
+    #preview {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>LISTA DE COMPRAS</h2>
+
+  <form action="javascript:void(0);" method="POST" onsubmit="app.create()">
+    <input type="text" id="nome" placeholder="Nome">
+    <input type="number" id="quantidade" placeholder="Quantidade">
+    <input type="submit" value="Adicionar">
+  </form>
+
+  <div id="preview" role="aria-hidden">
+    <form action="javascript:void(0);" method="POST" id="saveEdit">
+      <input type="text" id="edit-nome">
+      <input type="number" id="edit-quantidade">
+      <input type="submit" value="Editar" /> <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+    </form>
+  </div>
+
+  <p id="contador"></p>
+  <table aria-describedby="contador">
+    <tr>
+      <th id="view_nome">Nome</th>
+      <th id="view_quantidade">Quantidade</th>
+      <th id="view_editar">Editar</th>
+      <th id="view_deletar">Deletar</th>
+    </tr>
+    <tbody id="produtos"></tbody>
+    <tr>
+      <th id="_nm"></th>
+      <th id="_qt" style="text-align: right;">Total: 0</th>
+      <th id="_ed"></th>
+      <th id="_dl"></th>
+    </tr>
+  </table>
+
+  <script>
+    var app = new function() {
+
+      this.el = document.getElementById('produtos');
+
+      this.produtos = JSON.parse( localStorage.getItem("produtos") );
+
+      if ( this.produtos == null ) {
+        this.produtos = [
+          { nome: 'arroz', quantidade: 0 },
+          { nome: 'feijão', quantidade: 0 },
+          { nome: 'açucar', quantidade: 0 },
+          { nome: 'café', quantidade: 0 },
+          { nome: 'chá', quantidade: 0 }
+        ]
+      }
+
+      this.create = function () {
+        el = document.getElementById('nome');
+        qt = document.getElementById('quantidade');
+        var produto = { nome: el.value.trim(), quantidade: qt.value.trim() };
+
+        if (el.value) {
+          this.produtos.push(produto);
+          el.value = '';
+          this.readAll();
+        }
+      };
+
+      this.count = function (n_objetos) {
+        var el = document.getElementById('contador');
+        var nome = 'item';
+
+        if (n_objetos) {
+          if (n_objetos > 1) {
+            nome = 'items';
+          }
+          el.innerHTML = `Contém ${n_objetos} ${nome} na lista`;
+        } else {
+          el.innerHTML = `Não tem ${nome}s na lista`;
+        }
+      };
+
+      this.update = function (item) {
+        var el = document.getElementById('edit-nome');
+        var qt = document.getElementById('edit-quantidade');
+        el.value = this.produtos[item].nome;
+        qt.value = this.produtos[item].quantidade;
+        document.getElementById('preview').style.display = 'block';
+        self = this;
+
+        document.getElementById('saveEdit').onsubmit = function () {
+          var produto = { nome: el.value.trim(), quantidade: qt.value.trim() };
+
+          if (el.value) {
+            self.produtos.splice(item, 1, produto);
+            self.readAll();
+            closeInput();
+          }
+        }
+      };
+
+      this.delete = function (item) {
+        this.produtos.splice(item, 1);
+        this.readAll();
+      };
+
+      this.readAll = function () {
+        var data = '';
+        var qt_produtos = 0;
+
+        if (this.produtos.length > 0) {
+          for (i = 0; i < this.produtos.length; i++) {
+            data += '<tr>';
+            data += '<td>' + this.produtos[i].nome + '</td>';
+            data += '<td style="text-align: right;">' + this.produtos[i].quantidade + '</td>';
+            data += '<td><button onclick="app.update(' + i + ')">Editar</button></td>';
+            data += '<td><button onclick="app.delete(' + i + ')">Deletar</button></td>';
+            data += '</tr>';
+            qt_produtos += this.produtos[i].quantidade * 1;
+          }
+        }
+
+        this.count(this.produtos.length);
+        document.getElementById("_qt").innerHTML = `Total: ${qt_produtos}`
+
+        return this.el.innerHTML = data;
+      };
+    }
+
+    app.readAll();
+
+    window.onbeforeunload = function () {
+      localStorage.setItem('produtos', JSON.stringify(app.produtos));
+    }
+
+    function closeInput() {
+      document.getElementById('preview').style.display = 'none';
+    }
+  </script>
+
+  <!-- You can also require other files to run in this process -->
+  <script src="./renderer.js"></script>
+</body>
+
+</html>
