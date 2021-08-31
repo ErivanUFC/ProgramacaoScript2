@@ -1,7 +1,7 @@
 # Trabalho AP2 Protótipo - Programação Script
 ## Protótipo de uma lista de compras.
 
-#### link para o repositório: https://github.com/ErivanUFC/ProgramacaoScript2.git
+### link para o repositório: https://github.com/ErivanUFC/ProgramacaoScript2.git
 
 ### Nodejs + Electron.js + Crud Simples
 
