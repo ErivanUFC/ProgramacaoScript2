@@ -30,7 +30,7 @@ para windows:
 
 electron-packager . ListaWindows --overwrite --asar=true --platform=win32 --arch=ia32 --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName="Lista Windows"
 
-### Descrição Prototipo:
+### Descrição Protótipo:
 
 Um programa de uma lista de compras com CRUD simples, que possibilita adicionar novos itens e suas quantidades, e armazena após seu fechamento atravez do localstorage.
 
