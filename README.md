@@ -1,4 +1,5 @@
 # Trabalho AP2 Protótipo - Programação Script
+# link para o repositório: https://github.com/ErivanUFC/ProgramacaoScript2.git
 
 ## Protótipo de uma lista de compras.
 
