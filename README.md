@@ -32,7 +32,7 @@ electron-packager . ListaWindows --overwrite --asar=true --platform=win32 --arch
 
 ### Descrição Protótipo:
 
-Um programa de uma lista de compras com CRUD simples, que possibilita adicionar novos itens e suas quantidades, e armazena após seu fechamento atravez do localstorage.
+Um programa de uma lista de compras com CRUD simples, que possibilita adicionar novos itens e suas quantidades, e armazena após seu fechamento através do localstorage.
 
 #### Pergunta: O seu protótipo é descartável ou evolucionário? Justifique.
 
